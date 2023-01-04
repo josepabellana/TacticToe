@@ -1,4 +1,4 @@
-# TacticToe
+# TacticToe - https://tacticoe.net
 Welcome to Tactic-toe, a web app that allows users to train their own Tic-Tac-Toe AI model and engage in real-time battles.
 
 This app was designed and created by a team of 3 engineers using the following technologies:
