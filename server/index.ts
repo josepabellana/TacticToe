@@ -43,7 +43,7 @@ const io = require('socket.io')(http, {
 });
 require('./utils/socket')(io);
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORTNUM || 3000;
 const SECRET = process.env.SECRET || 'this is not very secure';
 
 const corsConfig = {
@@ -69,7 +69,7 @@ app.use(router);
 
 async function start() {
   try {
-    await db.sequelize.sync();
+    // await db.sequelize.sync();
     http.listen(port, () => {
       console.log(`Listening on port: ${port}`)
     })
@@ -79,3 +79,5 @@ async function start() {
 }
 
 start();
+
+exports.backend = app;

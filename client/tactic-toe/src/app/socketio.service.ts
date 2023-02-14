@@ -19,7 +19,7 @@ export class SocketioService {
   opponent = 'Bruce';
 
   setupSocketConnection() {
-    this.socket = io('http://localhost:3000', {
+    this.socket = io('34.129.191.19:3000', {
       withCredentials: true,
       });
     this.socket.on('message', (msg:string) => {

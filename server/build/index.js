@@ -32,6 +32,7 @@ const cors = require('cors');
 const session = require('express-session');
 const { passport } = require('./utils/passport');
 const { db } = require('./models/index');
+const functions = require('firebase-functions');
 const http = require('http').Server(app);
 const io = require('socket.io')(http, {
     cors: {
@@ -41,7 +42,7 @@ const io = require('socket.io')(http, {
     }
 });
 require('./utils/socket')(io);
-const port = process.env.PORT || 3001;
+const port = process.env.PORTNUM || 3000;
 const SECRET = process.env.SECRET || 'this is not very secure';
 const corsConfig = {
     origin: [process.env.URL || 'http://localhost:3000', process.env.CLIENTURL || 'http://localhost:4200'],
@@ -60,7 +61,7 @@ app.use(express.json());
 app.use(router);
 async function start() {
     try {
-        await db.sequelize.sync();
+        // await db.sequelize.sync();
         http.listen(port, () => {
             console.log(`Listening on port: ${port}`);
         });
@@ -70,3 +71,4 @@ async function start() {
     }
 }
 start();
+exports.backend = app;

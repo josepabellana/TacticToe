@@ -1,4 +1,7 @@
-{
+{ 
+  "scripts": {
+    "commit": "git add . && git commit -m 'x' && git push"
+  },
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0",
     "ng-mocks": "^14.3.3",

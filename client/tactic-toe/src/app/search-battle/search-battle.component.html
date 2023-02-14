@@ -4,8 +4,8 @@
   <div class="actionSel active"><h2>Search</h2></div>
 </div>
 <div class="searchGame">
-    <div class="searchAndCancel">
-      <button [disabled] = "socketService.searching"   class="searchButton" (click)="connectToRoom()">Search</button>
-      <button id="close" (click)="cancelSearch()"> Cancel </button> 
-    </div>
+
+  <button [disabled] = "socketService.searching"   class="searchButton" (click)="connectToRoom()">Search</button>
+  <button id="close" (click)="cancelSearch()"> Cancel </button> 
+    
 </div>

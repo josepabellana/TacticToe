@@ -14,15 +14,19 @@ export class CreateAnAiComponent implements OnInit {
   
   constructor(public api : APIClientService) {}
   ngOnInit(): void {
+    console.log(this.optionCreate)
     this.api.sharedAllAi.subscribe(data=>{
+      
         this.allAi = data;
         if(this.allAi.length ===0){ 
+          this.api.editAi(0)
           this.optionCreate = true;
         }else if(this.optionCreate===false){
             this.api.editAi(data[0].id)
         }
     });
     this.api.sharedEditAi.subscribe(data =>{
+     
       if(data.id){
         if(data){
           this.optionCreate = false

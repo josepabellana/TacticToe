@@ -10,13 +10,17 @@
   align-items: center;
 }
 
+section{
+  display: flex;
+  gap:10px;
+}
 .container {
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  text-align: center;
+  text-align: justify;
 }
 
 span {
